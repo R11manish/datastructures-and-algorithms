@@ -1,6 +1,13 @@
+/*
+	A stack, S1, contains some numbers in arbitrary order. 
+	Using another stack, S2, for temporary storage, sort the numbers in S1 such that the 
+	smallest is at the top of S1 and the largest is at the bottom.
+	Helped by @vishhvak
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
- 
+
 void push(int stack[], int size, int *top, int item)
 {
     if(*top==size)
@@ -11,7 +18,7 @@ void push(int stack[], int size, int *top, int item)
         stack[*top]=item;
     }
 }
- 
+
 int pop(int stack[], int *top)
 {
     if(*top<=0)
@@ -23,7 +30,7 @@ int pop(int stack[], int *top)
     }
     return 0;
 }
- 
+
 void display(int stack[], int *top)
 {
     int i;
@@ -33,7 +40,7 @@ void display(int stack[], int *top)
         printf("%d ", stack[i]);
     printf("\n");
 }
- 
+
 void sort(int stack[], int *top, int size)
 {
     int temp_stack[size],temp,top2=0;
@@ -54,9 +61,11 @@ void sort(int stack[], int *top, int size)
         // push temp in tempory of stack
         push(temp_stack,size,&top2,temp);
     }
-    display(temp_stack,&top2);
+    for(int i=0;i<size;i++)
+        push(stack,size,top,pop(temp_stack,&top2));
+    display(stack,top);
 }
- 
+
 int main()
 {
     int size, item;
