@@ -1,5 +1,5 @@
 /*
-	Finding the triplet sequence in a list of 
+	Finding the triplet sequence in a list of  
 	values such that the triplet is ordered 
 	xi>xi+1>xi+2
 	17, 29, 2, 38, 57, 19, 43, 21, 3, 7 ----> (2,38, 57)
