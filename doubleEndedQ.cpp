@@ -1,8 +1,9 @@
 /*
-	A Backup_Queue is defined as follows: Let Q be a queue of size k.
-	After every k insert operations, we make a copy of the queue for
-	backup purposes. Insert ‘n’ operations on the Backup_Queue
-	including copying the queue.
+	A double ended queue is an array where items may be inserted or deleted from either end.
+	- Front_ Insert( x): Insert  an element  ‘x’  at the front of the double ended queue.
+	- Front_Delete : Deletes and returns the front element.
+	- Rear_Insert(x) : Insert an element  ‘x’  at the rear position of the double ended queue. 
+	- Rear_Delete : Deletes and returns the rear element
 */
 
 #include <stdio.h>
