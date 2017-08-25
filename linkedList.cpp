@@ -5,11 +5,11 @@ using namespace std;
 struct node
 {
 	int data;
-	struct node *next;
+	struct node *next; //Pointer that can hold the address of another memmory of datatype struct node
 };
 
-struct node *head = (struct node*) malloc(sizeof(struct node));
-struct node *top = (struct node*) malloc(sizeof(struct node));
+struct node *head = (struct node*) malloc(sizeof(struct node)); //Start of the linkedList
+struct node *top = (struct node*) malloc(sizeof(struct node)); //Top of the linkedList
 
 void insert(int data, int *count)
 {		
@@ -22,9 +22,24 @@ void insert(int data, int *count)
 		head->next=temp;
 }
 
+void pop()
+{
+	struct node *pop = head;
+	while(pop->next!=NULL)
+	{
+		if(pop->next->next==NULL)
+		{
+			pop->next=NULL;
+			top=pop;
+			break;
+		}
+		pop=pop->next;
+	}
+}
+
 void display()
 {
-	struct node *disp = head;
+	struct node *disp = head; //node that goes through the entire linkedList from head to when that node's->next==NULL
 	while(disp->next!=NULL)
 	{
 		cout<<disp->next->data<<" ";
@@ -38,7 +53,7 @@ int main()
 	head->next=NULL;
 	while(choice)
 	{
-		printf("\n1)Insert\n2)Display\nEnter your choice: ");
+		printf("\n1)Insert\n2)Pop\n3)Display\nEnter your choice: ");
 		cin>>choice;
 		switch(choice)
 		{
@@ -49,6 +64,9 @@ int main()
 				count++;
 				break;
 			case 2:
+				pop();
+				break;
+			case 3:
 				display();
 				break;
 		}
