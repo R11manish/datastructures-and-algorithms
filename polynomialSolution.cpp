@@ -1,5 +1,11 @@
+/*
+	If f(x) is a polynomial with given degree n, and given k, 
+	compute f(k) using Linked Lists.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 struct node
 {
@@ -21,7 +27,7 @@ int insert(int root, int *power, int k)
 	top=temp;
 	if(*power==0)
 		head->next=temp;
-	return root*(k**power);
+	return root*(pow(k, *power));
 }
 
 int main()
