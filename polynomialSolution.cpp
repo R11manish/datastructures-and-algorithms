@@ -17,17 +17,29 @@ struct node
 struct node *head = (struct node*) malloc(sizeof(struct node));
 struct node *top = (struct node*) malloc(sizeof(struct node));
 
-int insert(int root, int *power, int k)
+void insert(int root, int power, int k)
 {		
 	struct node *temp = (struct node*) malloc(sizeof(struct node));
 	temp->root=root;
-	temp->power=*power;
+	temp->power=power;
 	temp->next=NULL;
 	top->next=temp;
 	top=temp;
-	if(*power==0)
+	if(power==0)
 		head->next=temp;
-	return root*(pow(k, *power));
+}
+
+int compute(int k)
+{
+	int sum=0;
+	struct node *trav = head;
+	while(trav->next!=NULL)
+	{
+		printf("%d %d\n", trav->root, trav->power);
+		sum+=trav->root*(pow(k, trav->power));
+		trav=trav->next;
+	}
+	return sum;
 }
 
 int main()
@@ -42,10 +54,11 @@ int main()
 		int root;
 		printf("Enter the root x^%d: ", power);
 		scanf("%d", &root);
-		sum+=insert(root, &power, k);
+		insert(root, power, k);
 		power++;
 		n--;
 	}
+	sum=compute(k);
 	printf("\nf(%d) is %d", k, sum);
 	return 0;
 }
