@@ -35,7 +35,6 @@ int compute(int k)
 	struct node *trav = head;
 	while(trav->next!=NULL)
 	{
-		printf("%d %d\n", trav->root, trav->power);
 		sum+=trav->root*(pow(k, trav->power));
 		trav=trav->next;
 	}
