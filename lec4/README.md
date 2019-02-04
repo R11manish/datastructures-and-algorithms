@@ -6,12 +6,12 @@
 - Support for name collisions in C++.
 - C++ adds this concept called namespaces. Everything in C is wrapped in the namespace called 'std'. `cout` and `cin` are standard objects for system i/o.
 - Mechanism for unwrapping namespaces using `using`. From being within a global namespace, you switch to the `std` namespace.
-```
+``` C++
 using namespace std;
 ```
 By doing this, you can no longer have objects that are named `cout` and `cin`. You can have more than one namespaces unwrapped. This is part of the pre-compilation part.
 - User defined type in c is a `struct`.
-```
+``` C++
 struct Data {
 	int x;
 	char c;
@@ -19,7 +19,7 @@ struct Data {
 ```
 You can add methods to `structs` using function pointers.
 - C -> C++
-```
+``` C++
 class Data {
 	// If there are no access specifiers, it defaults to `private`.
 	private:

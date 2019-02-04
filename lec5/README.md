@@ -58,7 +58,6 @@ int main() {
 #### Inheritance
 - To inherit from another class, you'd have to mention the access specifier.
 - Anything that's private is not inherited.
-- 
 ``` C++
 class Data: private A {
 	int *num;
