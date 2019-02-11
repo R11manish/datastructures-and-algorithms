@@ -31,7 +31,3 @@ Train::~Train() {
 Car* Train::get_caboose() {
 	return this->caboose;
 }
-
-int Car::get_weight() {
-	return this->weight;
-}

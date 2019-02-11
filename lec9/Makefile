@@ -1,4 +1,4 @@
-FLAGS = -Wall -Wextra -DDEBUG -g -std=c++14
+FLAGS = -Wall -Wextra -DDEBUG -g
 PROJNAME = lec9
 
 all: lec9.o Train.o Car.o
